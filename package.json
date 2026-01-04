@@ -1,0 +1,12 @@
+{
+  "name": "bhindi-github-agent-test",
+  "version": "1.0.0",
+  "description": "Mock repository for testing GitHub agent tools",
+  "main": "src/buggy-code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["testing", "github", "agent"],
+  "author": "Atharva Thakur",
+  "license": "MIT"
+}
