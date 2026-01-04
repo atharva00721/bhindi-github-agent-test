@@ -1,15 +1,18 @@
-// Intentionally buggy code for testing
+// Fixed code with bug corrections
 
 function calculateTotal(items) {
   let total = 0;
-  for (let i = 0; i <= items.length; i++) {  // BUG: Off-by-one error
+  for (let i = 0; i < items.length; i++) {  // FIXED: Changed <= to <
     total += items[i].price;
   }
   return total;
 }
 
 function divideNumbers(a, b) {
-  return a / b;  // BUG: No zero division check
+  if (b === 0) {  // FIXED: Added zero division check
+    throw new Error('Division by zero is not allowed');
+  }
+  return a / b;
 }
 
 function getUserData(userId) {
@@ -17,7 +20,13 @@ function getUserData(userId) {
     1: { name: "Alice" },
     2: { name: "Bob" }
   };
-  return users[userId].name;  // BUG: No null check
+  
+  // FIXED: Added null check
+  if (!users[userId]) {
+    throw new Error(`User with ID ${userId} not found`);
+  }
+  
+  return users[userId].name;
 }
 
 module.exports = { calculateTotal, divideNumbers, getUserData };
